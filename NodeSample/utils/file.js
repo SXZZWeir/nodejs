@@ -17,7 +17,7 @@ fileType = fileHandle.fileInfo;
 
 //www根目录
 var root=__dirname;
-if(!path.existsSync(root)){
+if(!fs.existsSync(root)){
 	util.error(root+"文件夹不存在，请重新制定根文件夹！");
 	process.exit();
 }
