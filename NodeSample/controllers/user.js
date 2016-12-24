@@ -7,6 +7,9 @@ var user =new userDBModel.Schema("user").model;
 exports.login = function (req, res, next) {
         res.render('login.html',{message:""});
 };
+exports.reg = function (req, res, next) {
+        res.render('user/reg.html',{message:""});
+};
 exports.onLogin = function (req, res, next) {
     var mdPassword=crypt.md5(req.body.password);
      var queryObj = {userName:req.body.userName,password:mdPassword};
@@ -23,12 +26,20 @@ exports.onLogin = function (req, res, next) {
 		}
 	})
 };
- exports.addUser = function (){
+exports.addUser = function (req,res,next){
      var userEntity = new user();
      userEntity.userName=req.body.userName;
-     userEntity.password=req.body.password;
+     userEntity.password=crypt.md5(req.body.password);
      userEntity.save(function (err,userInfo){
-
+        if(err){
+			 res.render('./login.html',{message:"登陆失败！"});
+		}else{
+			if(userInfo){
+				res.redirect("/index")
+			}else{
+				 res.render('./login.html',{message:"欢迎新用户！"});
+			}
+		}
      })
  };
 

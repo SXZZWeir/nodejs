@@ -2,7 +2,7 @@
 <html dir="ltr" lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<title>java、net工程师 吴超武作品</title>
+<title>注册用户</title>
 <meta name="keywords" content="node.js,mongodb,mongoose 后台界面" />
 <meta name="description" content="一个node.js+mongodb 的一个知识管理系统" />
 <meta name="Language" content="zh-CN" />
@@ -16,21 +16,18 @@
 <body>
 <div class="login">
 	<div class="menus">
-    	<div class="public">
-            <a href="#http://admin.99zyjz.com" target="_blank">使用帮助</a>
-            <a href="#http://admin.99zyj.com" target="_blank">联系开发者</a>
-        </div>
+    	<div class="public"><a href="#http://admin.99zyjz.com" target="_blank">使用帮助</a><a href="#http://admin.99zyj.com" target="_blank">联系开发者</a></div>
     </div>
     <div class="box png">
-        <form action="onLogin" method="post">
+        <form action="user/addUser" method="post">
         <div class="header">
             <h2 class="logo png"><a href="http://admin.99zyjz.com" target="_blank"></a></h2>
-            <span class="alt">管理员登录</span>
+            <span class="alt">管理员注册</span>
         </div>
         <ul>
             <li><label>用户名</label><input name="userName" type="text" class="text" value="Weir" /></li>
             <li><label>密　码</label><input name="password" type="password" class="text" value="123456" /></li>
-            <li class="submits"><input class="submit" type="submit" value="登录" /></li>
+            <li class="submits"><input class="submit" type="submit" value="注册" /></li>
         </ul>
         <div class="copyright">&copy; 2013 - 2015 | <a href="http://admin.99zyjz.com" target="_blank" title="Scott 网站">scott</a> |
             <a title="吴超武的腾讯微博" href="http://t.qq.com/wchaowu" target="_blank" class="weibo tencent">月光影的腾讯微博</a>

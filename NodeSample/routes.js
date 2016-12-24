@@ -6,10 +6,11 @@ exports.setRequestUrl=function(app){
         ,mongoObj = require('./controllers/mongoManagement')
         ,articleObj = require('./controllers/article');
 
-    app.get('/', user.login);
+    app.get('/', user.login);  
+    app.get('/reg', user.reg);
     app.post('/onLogin', user.onLogin);
     app.get('/userList', user.userList);
-    app.get('/user/addUser', user.addUser);
+    app.post('/user/addUser', user.addUser);
     app.get('/user/userManager', user.userManager);
 
     app.post('/index/newContent', indexObj.newContent);
